@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll Activated Sticky Navigation</title>
+    <link href="https://fonts.cdnfonts.com/css/visby" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/fontype-rounded" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <h1>Scroll Activated Sticky navigation</h1>
+            <img src="images/banner.jpg" alt="Photo" title="My Photo">
+            <p>Hi ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur illum quibusdam odit! Earum enim rem doloremque assumenda beatae et necessitatibus sequi totam voluptate ipsum optio incidunt veritatis, vero quae aliquam illo, aut deleniti! Earum hic necessitatibus deserunt, cumque praesentium facilis recusandae vero, quasi dignissimos sunt ipsum assumenda natus rerum nesciunt. Minus eligendi nam provident omnis eius veritatis minima, asperiores neque, explicabo molestiae numquam harum molestias, sapiente. Aliquid libero nesciunt sunt, neque recusandae. Ut corporis officia voluptatem sunt, sit temporibus neque dolor dolorum animi sequi ratione cumque labore quod accusamus qui sapiente quis. Distinctio minima, iure ipsa dolorum nemo quod mollitia.</p>
+            <a href="#">Learn More</a>
+            <hr>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eligendi!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio omnis, voluptatum. Ab commodi non impedit laboriosam, dolores cumque quaerat alias quibusdam et, eos autem debitis in neque vel. Sequi quisquam, nisi sit eius reprehenderit aspernatur dolore explicabo inventore eveniet perferendis aut, voluptates molestiae nulla assumenda est. Corrupti voluptatum quidem itaque, placeat blanditiis atque. Unde atque mollitia error, minima laudantium tenetur a nesciunt placeat fugit consequuntur sed labore officiis soluta eaque perferendis quo obcaecati culpa, aliquid architecto odit dolorem suscipit est nam nobis. Nisi impedit temporibus illum sapiente error facere inventore id sed accusamus minus saepe alias assumenda aperiam, deleniti in?</p>
+        </div>
+    </section>
+
+
+    <script>
+        const body = document.body;
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            let currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                body.classList.remove('scroll-up');
+            }
+
+            if (currentScroll > lastScroll && !body.classList.contains('scroll-down')) {
+                body.classList.remove('scroll-up');
+                body.classList.add('scroll-down');
+            }
+
+            if (currentScroll < lastScroll && body.classList.contains('scroll-down')) {
+                body.classList.remove('scroll-down');
+                body.classList.add('scroll-up');
+            }
+
+            lastScroll = currentScroll;
+        })
+
+    </script>
+</body>
+
+</html>
